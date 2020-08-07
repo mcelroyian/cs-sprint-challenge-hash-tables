@@ -3,6 +3,17 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    d = {}
+    result = []
+    total = len(arrays)
+    for l in arrays:
+        for n in l:
+            if n not in d.keys():
+                d[n] = 0
+            d[n] += 1
+            if d[n] == total:
+                result.append(n)
+
 
     return result
 
