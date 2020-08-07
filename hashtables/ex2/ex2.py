@@ -10,5 +10,17 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
     # Your code here
+    route = []
+    d = {}
 
+    for t in tickets:
+        d[t.source] = t.destination
+    
+    hops = 0
+    city = "NONE"
+    while hops < length:
+        city = d[city]
+        route.append(city)
+        hops += 1
+    print(route)
     return route
